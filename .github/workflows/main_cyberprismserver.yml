@@ -27,7 +27,7 @@ jobs:
         run: dotnet restore CyberPrism.Server/CyberPrism.Server.csproj -r win-x86
 
       - name: Build
-        run: dotnet build CyberPrism.Server/CyberPrism.Server.csproj -c Release --no-restore
+        run: dotnet build CyberPrism.Server/CyberPrism.Server.csproj -c Release -r win-x86 --no-restore
 
       - name: Publish
         run: dotnet publish CyberPrism.Server/CyberPrism.Server.csproj -c Release -o "${{env.DOTNET_ROOT}}/myapp" -r win-x86 --self-contained true --no-build
@@ -67,5 +67,6 @@ jobs:
           slot-name: 'Production'
           package: ./publish
           
+
 
 
