@@ -24,7 +24,7 @@ jobs:
           dotnet-version: '8.x'
 
       - name: Restore
-        run: dotnet restore CyberPrism.Server/CyberPrism.Server.csproj
+        run: dotnet restore CyberPrism.Server/CyberPrism.Server.csproj -r win-x86
 
       - name: Build
         run: dotnet build CyberPrism.Server/CyberPrism.Server.csproj -c Release --no-restore
@@ -67,4 +67,5 @@ jobs:
           slot-name: 'Production'
           package: ./publish
           
+
 
